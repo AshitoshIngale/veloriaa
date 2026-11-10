@@ -17,30 +17,20 @@ export const INSTAGRAM_DM_URL = `https://ig.me/m/${INSTAGRAM_HANDLE}`;
 export const INSTAGRAM_PROFILE_URL = `https://instagram.com/${INSTAGRAM_HANDLE}`;
 
 /* ---------------------------------------------------------------------------
-   DOMAINS — the brand is reachable on three domains.
+   DOMAINS — canonical domain for all meta tags, OG, sitemap and JSON-LD.
 
    ⚑ SEO RULE: ONE canonical domain. Every meta tag — canonical, og:url,
      og:image, robots.txt, sitemap.xml and all JSON-LD — always points at
-     SITE_URL below, no matter which of the three domains actually serves
-     the page. This is exactly what Google recommends for duplicate
-     domains: the canonical tag tells search engines (and og:url tells
-     social crawlers) that all three addresses are the same site, so they
-     consolidate into one set of search results instead of competing.
+     SITE_URL below.
 
-       1. www.veloriaa.studio   ← PRIMARY / canonical (SITE_URL)
-       2. veloriaa.vercel.app   ← alternate (Vercel's own subdomain:
-                                  vercel.app domains have no "www.")
-       3. www.veloriaa.me       ← alternate
+       1. theveloriaa.vercel.app  ← PRIMARY / canonical (SITE_URL)
 
-   ▸ On Vercel: add all three in Project → Settings → Domains and mark
-     www.veloriaa.studio as PRIMARY — Vercel then 301-redirects the other
-     two to it automatically. See DEPLOYMENT-DOMAINS.md for the full steps.
+   ▸ On Vercel: add your custom domain in Project → Settings → Domains
+     and mark it as PRIMARY if you later add a custom domain.
+     See DEPLOYMENT-DOMAINS.md for the full steps.
 --------------------------------------------------------------------------- */
-export const PRIMARY_DOMAIN = "www.veloriaa.studio";
-export const ALTERNATE_DOMAINS = [
-  "veloriaa.vercel.app",
-  "www.veloriaa.me",
-] as const;
+export const PRIMARY_DOMAIN = "theveloriaa.vercel.app";
+export const ALTERNATE_DOMAINS = [] as const;
 
 export const SITE_URL = `https://${PRIMARY_DOMAIN}`;
 
